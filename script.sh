@@ -6,4 +6,6 @@ sudo minikube start --vm-driver=none
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 docker tag app:latest localhost:5000/app
 docker push localhost:5000/app
+kubectl apply -f deployment.yml --validate=false
+kubectl apply -f service.yml --validate=false
 
